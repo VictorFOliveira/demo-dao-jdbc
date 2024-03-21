@@ -69,7 +69,7 @@ public class SellerDaoJBDC implements SellerDao {
 
 	@Override
 	public void update(Seller obj) {
-PreparedStatement st = null;
+		PreparedStatement st = null;
 		
 		try {
 			st = conn.prepareStatement("UPDATE seller "
@@ -102,7 +102,6 @@ PreparedStatement st = null;
 		
 		try {
 			st = conn.prepareStatement("DELETE FROM seller WHERE Id = ?");
-			
 			st.setInt(1, id);
 			st.executeUpdate();
 			
@@ -164,7 +163,7 @@ PreparedStatement st = null;
 		return obj;
 	}
 
-	private Department instantiateDepartment(ResultSet rs) throws SQLException {
+	Department instantiateDepartment(ResultSet rs) throws SQLException {
 		Department dep = new Department();
 
 		dep.setId(rs.getInt("DepartmentId"));
